@@ -1,13 +1,13 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#1a1714;
-  --ink2:#4a4640;
-  --ink3:#8a8580;
-  --paper:#faf9f6;
-  --paper2:#f2f0eb;
-  --paper3:#e8e5de;
-  --gold:#b8934a;
-  --gold2:#d4a85a;
+  --ink:#111111;
+  --ink2:#333333;
+  --ink3:#777777;
+  --paper:#ffffff;
+  --paper2:#f4f5f0;
+  --paper3:#dde0d4;
+  --gold:#5c6b2e;
+  --gold2:#7a8f3a;
   --radius:12px;
 }
 
@@ -113,7 +113,7 @@ textarea::placeholder{color:var(--ink3);}
 .btn-back{background:var(--paper2);color:var(--ink2);}
 .btn-back:hover{background:var(--paper3);}
 .btn-next{background:var(--ink);color:#fff;}
-.btn-next:hover{background:#2d2924;}
+.btn-next:hover{background:#333333;}
 .btn-next:disabled{background:var(--paper3);color:var(--ink3);cursor:not-allowed;}
 
 /* ── Result ── */
