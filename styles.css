@@ -1,0 +1,211 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1714;
+  --ink2:#4a4640;
+  --ink3:#8a8580;
+  --paper:#faf9f6;
+  --paper2:#f2f0eb;
+  --paper3:#e8e5de;
+  --gold:#b8934a;
+  --gold2:#d4a85a;
+  --radius:12px;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ── App shell ── */
+.app{max-width:680px;margin:0 auto;padding:0 0 100px;}
+
+/* ── Header ── */
+.header{padding:48px 24px 0;text-align:center;}
+.header-eyebrow{
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;margin-bottom:12px;
+}
+.header-title{
+  font-family:'Playfair Display',serif;font-size:32px;
+  color:var(--ink);line-height:1.2;margin-bottom:10px;
+}
+.header-sub{font-size:14px;color:var(--ink3);line-height:1.7;}
+
+/* ── Progress ── */
+.progress-wrap{padding:28px 24px 0;}
+.progress-steps{display:flex;gap:6px;align-items:center;margin-bottom:8px;}
+.progress-dot{
+  flex:1;height:3px;border-radius:99px;
+  background:var(--paper3);transition:background .4s;
+}
+.progress-dot.done{background:var(--gold);}
+.progress-dot.active{background:var(--gold2);}
+.progress-label{font-size:12px;color:var(--ink3);text-align:right;}
+
+/* ── Step card ── */
+.step-card{
+  margin:20px 16px 0;background:#fff;
+  border-radius:18px;border:1px solid var(--paper3);
+  overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,.04);
+  animation:fadeUp .3s ease both;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(12px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.step-header{padding:24px 28px 20px;border-bottom:1px solid var(--paper3);}
+.step-num{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gold);font-weight:500;margin-bottom:6px;
+}
+.step-title{
+  font-family:'Playfair Display',serif;font-size:22px;
+  color:var(--ink);margin-bottom:8px;
+}
+.step-desc{font-size:14px;color:var(--ink2);line-height:1.6;}
+.step-body{padding:24px 28px;}
+
+/* ── Insight ── */
+.insight{
+  background:var(--paper2);border-radius:10px;
+  padding:14px 16px;font-size:13px;color:var(--ink2);
+  line-height:1.6;margin-bottom:20px;
+}
+.insight strong{color:var(--ink);font-weight:500;}
+
+/* ── Questions ── */
+.q-block{margin-bottom:4px;}
+.q-label{
+  font-size:11px;font-weight:500;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink3);margin-bottom:8px;
+}
+.q-text{
+  font-size:15px;color:var(--ink);line-height:1.55;
+  margin-bottom:6px;font-style:italic;
+}
+.q-hint{font-size:12px;color:var(--ink3);line-height:1.5;margin-bottom:10px;}
+
+textarea{
+  width:100%;border:1px solid var(--paper3);border-radius:10px;
+  padding:12px 14px;font-family:'DM Sans',sans-serif;font-size:14px;
+  color:var(--ink);background:var(--paper);resize:none;min-height:90px;
+  transition:border-color .2s;outline:none;line-height:1.6;
+}
+textarea:focus{border-color:var(--gold2);}
+textarea::placeholder{color:var(--ink3);}
+
+.divider{height:1px;background:var(--paper3);margin:20px 0;}
+
+/* ── Nav ── */
+.nav{
+  display:flex;gap:10px;padding:0 16px;margin-top:16px;
+  position:sticky;bottom:16px;
+}
+.btn{
+  flex:1;padding:15px;border-radius:14px;
+  font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;
+  cursor:pointer;transition:all .15s;border:none;
+}
+.btn-back{background:var(--paper2);color:var(--ink2);}
+.btn-back:hover{background:var(--paper3);}
+.btn-next{background:var(--ink);color:#fff;}
+.btn-next:hover{background:#2d2924;}
+.btn-next:disabled{background:var(--paper3);color:var(--ink3);cursor:not-allowed;}
+
+/* ── Result ── */
+.result-card{
+  margin:20px 16px 0;background:var(--ink);
+  border-radius:18px;padding:36px 28px;color:#fff;
+  animation:fadeUp .4s ease both;
+}
+.result-eyebrow{
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:16px;
+}
+.result-quote-mark{
+  font-family:'Playfair Display',serif;font-size:52px;
+  color:var(--gold);line-height:.8;margin-bottom:10px;
+}
+.result-purpose{
+  font-family:'Playfair Display',serif;font-size:21px;
+  line-height:1.5;color:#fff;margin-bottom:24px;font-style:italic;
+}
+.result-divider{height:1px;background:rgba(255,255,255,.12);margin:20px 0;}
+.result-section{margin-bottom:18px;}
+.result-section-label{
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:6px;
+}
+.result-section-text{font-size:14px;color:rgba(255,255,255,.72);line-height:1.6;}
+.validation{margin-top:4px;}
+.validation-title{
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--gold2);margin-bottom:12px;
+}
+.val-item{
+  display:flex;align-items:flex-start;gap:10px;
+  margin-bottom:10px;font-size:13px;
+  color:rgba(255,255,255,.68);line-height:1.5;
+}
+.val-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold2);flex-shrink:0;margin-top:5px;
+}
+.result-actions{display:flex;flex-direction:column;gap:10px;margin-top:24px;}
+.btn-restart{
+  background:rgba(255,255,255,.1);color:#fff;
+  border:1px solid rgba(255,255,255,.2);padding:13px;
+  border-radius:12px;font-family:'DM Sans',sans-serif;
+  font-size:14px;font-weight:500;cursor:pointer;transition:background .15s;
+}
+.btn-restart:hover{background:rgba(255,255,255,.18);}
+.btn-share{
+  background:var(--gold);color:var(--ink);
+  border:none;padding:13px;border-radius:12px;
+  font-family:'DM Sans',sans-serif;font-size:14px;
+  font-weight:500;cursor:pointer;transition:background .15s;
+}
+.btn-share:hover{background:var(--gold2);}
+
+.result-note{
+  margin:16px 16px 0;background:var(--paper2);
+  border-radius:14px;padding:20px 22px;
+}
+.result-note-label{
+  font-size:11px;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--gold);font-weight:500;margin-bottom:8px;
+}
+.result-note-text{font-size:14px;color:var(--ink2);line-height:1.7;}
+
+/* ── Install banner ── */
+.install-banner{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--ink);color:#fff;
+  padding:14px 20px;display:flex;align-items:center;
+  gap:12px;z-index:999;border-top:1px solid rgba(255,255,255,.1);
+}
+.install-text{font-size:13px;flex:1;line-height:1.4;}
+.install-btn{
+  background:var(--gold);color:var(--ink);border:none;
+  padding:8px 18px;border-radius:8px;font-size:13px;
+  font-weight:500;cursor:pointer;white-space:nowrap;
+  font-family:'DM Sans',sans-serif;
+}
+.install-close{
+  background:none;border:none;color:rgba(255,255,255,.5);
+  font-size:18px;cursor:pointer;padding:4px;line-height:1;
+}
+.hidden{display:none!important;}
+
+/* ── Responsive ── */
+@media(max-width:420px){
+  .header-title{font-size:26px;}
+  .step-header{padding:20px 20px 16px;}
+  .step-body{padding:20px;}
+  .result-card{padding:28px 20px;}
+  .result-purpose{font-size:18px;}
+}
